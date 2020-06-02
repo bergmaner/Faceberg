@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/faceberg/static/css/main.5f361e03.chunk.css",
+    "main.js": "/faceberg/static/js/main.9da74f6e.chunk.js",
+    "main.js.map": "/faceberg/static/js/main.9da74f6e.chunk.js.map",
+    "runtime-main.js": "/faceberg/static/js/runtime-main.d2a4cedc.js",
+    "runtime-main.js.map": "/faceberg/static/js/runtime-main.d2a4cedc.js.map",
+    "static/js/2.962311aa.chunk.js": "/faceberg/static/js/2.962311aa.chunk.js",
+    "static/js/2.962311aa.chunk.js.map": "/faceberg/static/js/2.962311aa.chunk.js.map",
+    "index.html": "/faceberg/index.html",
+    "precache-manifest.16b5beb9b363157851f37f2a62dd28a7.js": "/faceberg/precache-manifest.16b5beb9b363157851f37f2a62dd28a7.js",
+    "service-worker.js": "/faceberg/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/faceberg/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.962311aa.chunk.js.LICENSE.txt": "/faceberg/static/js/2.962311aa.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/faceberg/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2a4cedc.js",
+    "static/js/2.962311aa.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.9da74f6e.chunk.js"
+  ]
+}
