@@ -1,12 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { userRef } from './services/Firebase/';
 
 function App() {
+
+  useEffect( () => {
+    function callFunc(){
+      userRef.set({
+        email: "test@gmail.com",
+        password: "haslo123"
+      })
+    }
+    callFunc();
+  },[]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
