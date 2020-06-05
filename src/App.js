@@ -1,34 +1,33 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { userRef } from './services/Firebase/';
+import signUp from './services/Firebase/signUp';
+import signIn from './services/Firebase/signIn';
 
 function App() {
 
   useEffect( () => {
     function callFunc(){
-      userRef.set({
-        email: "test@gmail.com",
-        password: "haslo123"
+      userRef.push({
+        email: 'demogo@op.pl',
+        password: 'haslo123'
       })
     }
-    callFunc();
+    //callFunc();
   },[]);
 
+  const onSignUp = () => {
+    const result = signUp('demogo@op.pl','haslo123','Lanner','Halington');
+    console.log(result);
+  }
+  const onSignIn = () => {
+    const result = signIn('demogo@op.pl','haslo123');
+    console.log(result);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <button onClick = { () => onSignUp() }>Sign Up</button>
+     <button onClick = { () => onSignIn() }>Sign In</button>
     </div>
   );
 }
