@@ -1,6 +1,6 @@
 import { firebaseApp, userRef } from './index';
 
-export default ( email, password ) => {
+export default ({ email, password }) => {
     firebaseApp.auth().signInWithEmailAndPassword(email,password).then( (data) => {
         userRef.child(data.user.uid).once('value',(snapshot) => {
             console.log(snapshot.val());

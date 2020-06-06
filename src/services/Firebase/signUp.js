@@ -1,6 +1,6 @@
 import { firebaseApp, userRef } from './index';
 
-export default ( email, password, firstName, lastName ) => {
+export default ({email, password, firstName, lastName}) => {
     if( !firstName || !lastName ){
         return false;
     }
