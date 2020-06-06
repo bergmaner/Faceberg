@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { userRef } from './services/Firebase/';
+import { userRef, firebaseApp } from './services/Firebase/';
 import signUp from './services/Firebase/signUp';
 import signIn from './services/Firebase/signIn';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
 
-  useEffect( () => {
-    function callFunc(){
-      userRef.push({
-        email: 'demogo@op.pl',
-        password: 'haslo123'
-      })
-    }
-    //callFunc();
-  },[]);
+    firebaseApp.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user.uid);
+      } else {
+       console.log('no');
+      }
+    });
 
   const onSignUp = () => {
     const result = signUp('demogo@op.pl','haslo123','Lanner','Halington');
@@ -26,8 +26,11 @@ function App() {
   }
   return (
     <div className="App">
+      <Login/>
+      <Register/>
      <button onClick = { () => onSignUp() }>Sign Up</button>
      <button onClick = { () => onSignIn() }>Sign In</button>
+     <button onClick = { () => firebaseApp.auth().signOut() }>Log Out</button>
     </div>
   );
 }
