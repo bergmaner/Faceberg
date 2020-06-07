@@ -33,7 +33,7 @@ const Register = (props) => {
             <TextField fullWidth label = 'Email' type = 'email' name = 'email' onChange = { handleChange }/>
             <TextField fullWidth label = 'Password' type = 'password' name = 'password' onChange = { handleChange }/>
             <Button style = {{ marginTop: '15px' }} fullWidth endIcon = {<SendIcon/>} color = 'primary' variant = 'contained' type = 'submit' onClick = { handleSubmit }>Submit</Button>
-            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span onClick = { () => { props.changeStatus('signIn') } } className = 'link'>Already have an account? Sign In</span></div>
+            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span onClick = { () => { props.changeSignIn(true) } } className = 'link'>Already have an account? Sign In</span></div>
         </div>
     </div>
     )

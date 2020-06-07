@@ -29,7 +29,7 @@ const Login = (props) => {
             <TextField fullWidth label = 'First Name' type = 'email' name ='email' onChange = { handleChange }/>
             <TextField fullWidth label = 'Password' type = 'password' name = 'password' onChange = { handleChange }/>
             <Button style = {{ marginTop: '15px' }} fullWidth endIcon = { <SendIcon/> } color = 'primary' variant = 'contained' onClick = { handleSubmit } >Submit</Button>
-            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span onClick = { () => props.changeStatus('signUp') } className = 'link'>Have an account yet? Sign Up</span></div>
+            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span onClick = { () => props.changeSignIn(false) } className = 'link'>Have an account yet? Sign Up</span></div>
         </div>
     </div>
     )
