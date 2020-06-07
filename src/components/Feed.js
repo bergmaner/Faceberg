@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Container } from '@material-ui/core';
+import AddPost from '../components/AddPost';
 
 const Feed = () => {
     return (
@@ -9,7 +10,7 @@ const Feed = () => {
             <div style= {{ background:'red' }}>Profiles</div>
             </Grid>
             <Grid item xs = {12} sm = {8}>
-            <div style= {{ background:'purple' }}>fffff</div>
+                <AddPost/>
             </Grid>
          </Grid>
         </Container>

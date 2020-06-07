@@ -10,7 +10,8 @@ const useStyles = makeStyles( () => ({
     flexGrow: 1,
   },
   appBar: {
-    minHeight: '64px'
+    minHeight: '64px',
+    padding:   '0px'
   },
   title: {
     flexGrow: 1,
@@ -65,14 +66,16 @@ const Navbar = (props) => {
                 }}
                 keepMounted
                 transformOrigin = {{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
                 open = {open}
                 onClose = {handleClose}
               >
+                <Container fixed>
                 <MenuItem onClick = {handleClose}>Profile</MenuItem>
                 <MenuItem onClick = { logOut }>Logout</MenuItem>
+                </Container>
               </Menu>
             </div> }
         </Toolbar>
