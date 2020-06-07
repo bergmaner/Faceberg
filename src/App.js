@@ -1,29 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { userRef, firebaseApp } from './services/Firebase/';
-import signIn from './services/Firebase/signIn';
+import { firebaseApp } from './services/Firebase/';
 import Login from './components/Login';
 import Register from './components/Register';
 
 function App() {
 
+    const [ status, setStatus ] = useState('signIn');
+
     firebaseApp.auth().onAuthStateChanged(function(user) {
       if (user) {
-        console.log(user.uid);
-      } else {
-       console.log('no');
-      }
+        setStatus('logged');
+      } 
     });
 
-  const onSignIn = () => {
-    const result = signIn('demogo@op.pl','haslo123');
-    console.log(result);
+  const changeStatus = (value) => {
+    setStatus(value);
   }
+
   return (
     <div className="App">
-      <Login/>
-      <Register/>
-     <button onClick = { () => onSignIn() }>Sign In</button>
+      { status === 'logged' && <div>Login</div>}
+      { status === 'signIn' && <Login changeStatus = { changeStatus }/>}
+      { status === 'signUp' && <Register changeStatus = { changeStatus }/> }
      <button onClick = { () => firebaseApp.auth().signOut() }>Log Out</button>
     </div>
   );

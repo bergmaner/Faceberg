@@ -3,7 +3,7 @@ import { TextField, Button } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import signUp from '../services/Firebase/signUp';
 
-const Register = () => {
+const Register = (props) => {
 
     const [ data, setData ] = useState({
         firstName: '',
@@ -33,7 +33,7 @@ const Register = () => {
             <TextField fullWidth label = 'Email' type = 'email' name = 'email' onChange = { handleChange }/>
             <TextField fullWidth label = 'Password' type = 'password' name = 'password' onChange = { handleChange }/>
             <Button style = {{ marginTop: '15px' }} fullWidth endIcon = {<SendIcon/>} color = 'primary' variant = 'contained' type = 'submit' onClick = { handleSubmit }>Submit</Button>
-            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span className = 'link'>Already have an account? Sign In</span></div>
+            <div style = {{ textAlign: 'center', paddingTop: '15px' }} ><span onClick = { () => { props.changeStatus('signIn') } } className = 'link'>Already have an account? Sign In</span></div>
         </div>
     </div>
     )
