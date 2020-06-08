@@ -13,8 +13,8 @@ const DropDownMenu = ({ menuConfig }) => {
                      {menuConfig.icon}
                      </IconButton>
                     <Menu {...bindMenu(popupState)}>
-                      { menuConfig.items.map( (item) => 
-                        <MenuItem onClick = { popupState.close, item.onClick }>{ item.text }</MenuItem>
+                      { menuConfig.items.map( (item, key) => 
+                        <MenuItem key = { key } onClick = { popupState.close, item.onClick }>{ item.text }</MenuItem>
                       )}
                       
                     </Menu>
