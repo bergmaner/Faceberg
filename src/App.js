@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Feed from './components/Feed';
 import Navbar from './components/Navbar';
+
 function App() {
 
     const [ status, setStatus ] = useState('');
