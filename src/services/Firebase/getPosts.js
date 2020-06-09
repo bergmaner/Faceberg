@@ -1,9 +1,15 @@
 import { postRef } from './index';
 
-export default async () => {
-    let result;
-    await postRef.once('value',snapshot =>{
-        result = snapshot.val();
-    });
+const getPosts = async() => {
+    let result = [];
+     await postRef.once('value',snapshot =>{
+            snapshot.forEach( post => {
+                result.push({
+                    ...post.val(),
+                    postKey: post.key
+                })
+            })
+        })
     return result;
 }
+export default getPosts;
