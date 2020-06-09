@@ -40,6 +40,7 @@ const AddPost = () => {
       const uid = firebaseApp.auth().currentUser.uid;
       const result = addPost(uid, content);
     }
+    setContent("");
   };
 
   return (
@@ -53,6 +54,7 @@ const AddPost = () => {
           multiline
           rows={3}
           placeholder="Please write here"
+          value={content}
           onChange={(e) => setContent(e.target.value)}
         />
       </Grid>

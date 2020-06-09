@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Container } from "@material-ui/core";
 import AddPost from "../components/AddPost";
-import Post from "../components/Post";
 import Profile from "../components/Profile";
 import PostList from "../components/PostList";
 
@@ -14,7 +13,6 @@ const Feed = () => {
         </Grid>
         <Grid item xs={12} sm={8}>
           <AddPost />
-          <Post />
           <PostList />
         </Grid>
       </Grid>

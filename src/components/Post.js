@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Post = ({ details }) => {
+const Post = ({ details, UID }) => {
   const classes = useStyles();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -38,25 +38,27 @@ const Post = ({ details }) => {
   }, []);
 
   return (
-    <div className="outer">
-      <div>
-        <div className={classes.post}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Avatar />
-            <div className={classes.content}>
-              <div>
-                {firstName}
-                <span> </span>
-                {lastName}
+    <>
+      <div className="outer">
+        <div>
+          <div className={classes.post}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Avatar />
+              <div className={classes.content}>
+                <div>
+                  {firstName}
+                  <span> </span>
+                  {lastName}
+                </div>
+                <div style={{ color: "gray" }}>6 minutes ago</div>
               </div>
-              <div style={{ color: "gray" }}>6 minutes ago</div>
             </div>
+            {UID === details.author && <DropDownMenu menuConfig={menuConfig} />}
           </div>
-          <DropDownMenu menuConfig={menuConfig} />
         </div>
+        <div style={{ marginTop: "10px" }}>{details?.content} </div>
       </div>
-      <div style={{ marginTop: "10px" }}>{details?.content} </div>
-    </div>
+    </>
   );
 };
 export default Post;
