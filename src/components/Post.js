@@ -34,9 +34,8 @@ const Post = ({ details }) => {
         setLastName(snapshot.val().lastName);
       });
     };
-  if(details && details.author) getName();
-   
-  },[]);
+    if (details && details.author) getName();
+  }, []);
 
   return (
     <div className="outer">
