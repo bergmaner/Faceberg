@@ -4,7 +4,7 @@ const addPost = (uid, content) => {
   postRef.push({
     author: uid,
     content,
-    date: new Date().toLocaleString(),
+    date: Date.now()
   });
 };
 export default addPost;

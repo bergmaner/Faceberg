@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Avatar } from "@material-ui/core";
+import moment from "moment";
 import DropDownMenu from "./DropDownMenu";
 import { makeStyles } from "@material-ui/core/styles";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { userRef } from "../services/Firebase/index";
+import deletePost from "../services/Firebase/deletePost";
 
 const useStyles = makeStyles({
   post: {
@@ -25,7 +27,7 @@ const Post = ({ details, UID }) => {
   const menuConfig = {
     icon: <MoreVertIcon />,
     class: "link",
-    items: [{ text: "Edit" }, { text: "Delete" }],
+    items: [{ text: "Edit", onClick: () => console.log("hej") }, { text: "Delete", onClick: () => deletePost(details.postKey) }],
   };
   useEffect(() => {
     const getName = () => {
@@ -50,7 +52,9 @@ const Post = ({ details, UID }) => {
                   <span> </span>
                   {lastName}
                 </div>
-                <div style={{ color: "gray" }}>6 minutes ago</div>
+                <div style={{ color: "gray" }}>
+                  {moment(details.date).fromNow()}
+                </div>
               </div>
             </div>
             {UID === details.author && <DropDownMenu menuConfig={menuConfig} />}

@@ -32,9 +32,6 @@ function App() {
       {status === "notLogged" && signIn === false && (
         <Register changeSignIn={changeSignIn} />
       )}
-      <button onClick={() => (firebaseApp.auth().signOut(), setSignIn(true))}>
-        Log Out
-      </button>
     </div>
   );
 }
