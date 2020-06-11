@@ -1,11 +1,12 @@
 import { userRef } from "./index";
 
-const editUserDetails = ({ uid, firstName, lastName }) => {
+const editUserDetails = ({ uid, firstName, lastName, imageURL }) => {
   userRef
     .child(uid)
-    .set({
+    .update({
       firstName,
       lastName,
+      imageURL: imageURL ? imageURL : ""
     })
 };
 export default editUserDetails;
