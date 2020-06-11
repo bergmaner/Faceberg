@@ -28,7 +28,7 @@ const PostList = () => {
     <div>
       <div>
         {posts.map((post, key) => (
-          <Post key={key} details={post} UID={UID} />
+          <Post key={post.postKey} details={post} UID={UID} />
         ))}
       </div>
     </div>
